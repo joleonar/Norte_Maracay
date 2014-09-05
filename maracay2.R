@@ -53,6 +53,13 @@ xlab("Fecha")+ylab("No sismos") + scale_fill_manual(values=c("blue", "green"))
 ggplot(select.df, aes(x=mag1,fill=region)) + geom_histogram(binwidth=.5, colour="black") + facet_grid(region ~.)+
   xlab("Magnitud")+ylab("No sismos") + scale_fill_manual(values=c("blue", "green"))
 
+#No sismos día sencillo
+ggplot(bn, aes(x=Fecha)) + geom_histogram(binwidth=1,colour="black",fill="blue") +
+xlab("Fecha")+ylab("No sismos") 
+
+#No sismos magnitud sencillo
+ggplot(bn, aes(x=mag1,fill=region)) + geom_histogram(binwidth=.5,colour="black", fill="blue") +
+  xlab("Magnitud")+ylab("No sismos")
 
 ggplot(select.df, aes(x=Fecha,fill=region)) + geom_histogram(binwidth=1,colour="black",alpha=.5,position="identity") +
 xlab("Fecha")+ylab("No sismos") + scale_fill_manual(values=c("blue", "green"))
